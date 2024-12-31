@@ -1,0 +1,10 @@
+build/
+__pycache__/
+CreatePDF/
+dist/
+env_small/
+sample/
+venv_mini/
+venv01_/
+*.cmd
+*.exe

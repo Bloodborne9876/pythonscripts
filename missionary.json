@@ -1,0 +1,36 @@
+{
+    "Name": "Missonary",
+    "BasePrompt": "[Face] , open mouth , sweat , embarrassed , front(1.3) sitting , [Z], focus face , skirt , [Y] , [X]",
+    "Prompt": "lying, missionary , [X] ,  missionary, vaginal, pov ,  1boy, penis, spread legs",
+    "ImgDir": "C:\\イラスト関係\\成果\\保存\\Controlnet\\正常位",
+    "Ctrlnet": [
+        {
+            "ModuleName": "depth_midas",
+            "ModelName": "control_v11f1p_sd15_depth_fp16 [4b72d323]",
+            "Weight": 0.7
+        }
+    ],
+    "Step": 40,
+    "Batch": 1,
+    "Width": 512,
+    "Height": 768,
+    "Strength": 0.45,
+    "RandomDic": {
+        "[Face]": [
+            "smile",
+            "frown"
+        ],
+        "[X]": [
+            "lace panties , white panties",
+            "vaginal , pussy "
+        ],
+        "[Y]": [
+            "zettai ryouiki",
+            "bare foot"
+        ],
+        "[Z]": [
+            "on chair , in classroom",
+            "on bed, indoors"
+        ]
+    }
+}
