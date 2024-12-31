@@ -72,7 +72,9 @@ def create_thumbnail(folder_path):
     draw = ImageDraw.Draw(result)
     
     # フォルダ名のテキストを追加
-    folder_name = os.path.basename(folder_path)
+    parent_name = os.path.basename(os.path.dirname(folder_path))
+    folder_name = f"{parent_name}_{os.path.basename(folder_path)}"
+
     try:
         # 利用可能な幅に合わせてフォントサイズを計算
         font_size = 1
