@@ -73,7 +73,7 @@ def create_thumbnail(folder_path):
     
     # フォルダ名のテキストを追加
     parent_name = os.path.basename(os.path.dirname(folder_path))
-    folder_name = f"{parent_name}_{os.path.basename(folder_path)}"
+    folder_name = f"{parent_name}_{os.path.basename(folder_path)}_{len(image_files)}枚"
 
     try:
         # 利用可能な幅に合わせてフォントサイズを計算

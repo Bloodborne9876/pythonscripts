@@ -26,29 +26,16 @@ def main():
     # 結果を格納するリスト
     results = []
     
-    # zipファイルの存在確認
-    zip_files = [f for f in os.listdir(folder_path) if f.lower().endswith('.zip')]
-    if not zip_files:
-        print("zipファイルが見つかりませんでした。")
-        return
-    # 指定フォルダ内のzipファイルを検索
-    total_files = 0  # 合計ファイル数を追跡
-    for file in zip_files:
-        try:
-            zip_path = os.path.join(folder_path, file)
-            file_count = get_zip_contents(zip_path)
-            total_files += file_count  # ファイル数を合計に追加
-            
-            # 結果を追加
-            result = f"ファイル名: {file}\nファイル数: {file_count}\n"
-            result += "-"*50 + "\n"
+    # フォルダ内のすべてのフォルダを取得
+    total_files = 0
+    for item in os.listdir(folder_path):
+        item_path = os.path.join(folder_path, item)
+        if os.path.isdir(item_path):
+            file_count = len([f for f in os.listdir(item_path) if os.path.isfile(os.path.join(item_path, f))])
+            total_files += file_count
+            result = f"フォルダ: {item} - {file_count}ファイル\n"
             results.append(result)
-            
-            # 画面に表示
-            print(result)
-            
-        except zipfile.BadZipFile:
-            print(f"警告: {file} は破損しているか不正なzipファイルです。")
+            print(result, end='')
     
     # 合計ファイル数を追加
     total_result = f"\n合計ファイル数: {total_files}\n"
