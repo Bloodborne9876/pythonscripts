@@ -8,3 +8,5 @@ venv_mini/
 venv01_/
 *.cmd
 *.exe
+
+.codegpt
