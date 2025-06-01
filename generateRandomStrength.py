@@ -20,11 +20,12 @@ def is_valid_input(input_string):
 
 def main():
     input_string = ""
-    minimum_elements = 3
+    minimum_elements = -1
 
     if len(sys.argv) > 2:
         minimum_elements = int(sys.argv[2])
     
+    print("カンマ区切りの文字列を入力してください")
     while True:
         if len(sys.argv) > 1:
             input_string = sys.argv[1]
@@ -38,10 +39,17 @@ def main():
             input_string = input().strip()
             if is_valid_input(input_string):
                 break
-            print("カンマ区切りの文字列を入力してください")
-
+    if minimum_elements < 3:  # Only ask if not set from command line
+        try:
+            print("最小要素数を入力してください (デフォルト: 3):")
+            input_min = input().strip()
+            if input_min:
+                minimum_elements = int(input_min)
+        except ValueError:
+            print("不正な入力です。デフォルト値の3を使用します。")
+            minimum_elements = 3
     all_outputs = []
-    for _ in range(80):
+    for _ in range(20):
         output_string = add_prompt_strength(input_string, minimum_elements)
         print(output_string)
         all_outputs.append(output_string)
