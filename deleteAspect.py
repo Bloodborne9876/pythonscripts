@@ -83,7 +83,9 @@ def main():
 if __name__ == "__main__":
     # デバッグ用にハードコードされた値（本番ではコマンドライン引数を使用）
     folder = r"C:\temp\outputs"
-    width = 1216
-    height = 832
+    # folder = r"D:\000_Backup\000_AI\001_Output"
+    width = 1392
+    height = 960
     delete_low_resolution_png(folder, width, height)
+    delete_low_resolution_png(folder, height, width)  # 縦横を入れ替えても同じ処理を行う
     # main()  # コマンドライン引数を使用する場合はこちらを有効に
