@@ -280,8 +280,8 @@ class ImageOrganizer:
 def main():
     """メイン実行関数"""
     # 設定
-    input_folder = r"C:\temp\outputs\sample"
-    output_base_folder = r"C:\temp\outputs\sample\temp"
+    input_folder = r"C:\temp\outputs\202508"
+    output_base_folder = r"C:\temp\outputs\202508\sorted"
     
     # CPU数に基づいてワーカー数を最適化
     cpu_count = os.cpu_count() or 1
